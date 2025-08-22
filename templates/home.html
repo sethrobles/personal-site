@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}Seth Robles - Software Engineer & Developer{% endblock %}
+{% block description %}Welcome to Seth Robles' portfolio. Software engineer, developer, and technology enthusiast with expertise in modern web technologies.{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1 class="hero-title">Hi, I'm Seth Robles</h1>
+            <p class="hero-subtitle">Software Engineer & Developer</p>
+            <p class="hero-description">
+                I build modern web applications and solve complex problems with clean, efficient code.
+                Passionate about technology, continuous learning, and creating impactful solutions.
+            </p>
+            <div class="hero-actions">
+                <a href="{{ url_for('projects_index') }}" class="btn btn-primary">View My Work</a>
+                <a href="{{ url_for('resume') }}" class="btn btn-secondary">Download Resume</a>
+                <a href="{{ url_for('portfolio') }}" class="btn btn-outline">View Portfolio</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <div class="hero-avatar">
+                <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="featured-projects">
+    <div class="container">
+        <header class="section-header">
+            <h2 class="section-title">Featured Work</h2>
+            <p class="section-description">A selection of my recent projects and blog posts</p>
+        </header>
+
+        <div class="projects-grid">
+            {% from '_components/entry_card.html' import entry_card %}
+            {% for entry in featured_work %}
+                {{ entry_card(entry) }}
+            {% endfor %}
+        </div>
+
+        <div class="section-actions">
+            <a href="{{ url_for('projects_index') }}" class="btn btn-outline">View All Projects</a>
+            <a href="{{ url_for('blog_index') }}" class="btn btn-outline">View All Blogs</a>
+        </div>
+    </div>
+</section>
+
+<section class="hobbies">
+    <div class="container">
+        <header class="section-header">
+            <h2 class="section-title">Hobbies & Interests</h2>
+            <p class="section-description">What I do when I'm not coding</p>
+        </header>
+
+        <div class="hobbies-grid">
+            <div class="hobby-widget">
+                <h3 class="hobby-title">🏃‍♂️ Running & Fitness</h3>
+                <div id="strava-widget" class="strava-widget">
+                    <div class="widget-placeholder">
+                        <p>Loading Strava activities...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hobby-widget">
+                <h3 class="hobby-title">📚 Reading</h3>
+                <div id="goodreads-widget" class="goodreads-widget">
+                    <div class="widget-placeholder">
+                        <p>Goodreads widget coming soon...</p>
+                        <!-- TODO: Integrate with Goodreads API or embed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-cta">
+    <div class="container">
+        <div class="cta-content">
+            <h2 class="cta-title">Let's Work Together</h2>
+            <p class="cta-description">
+                I'm always interested in new opportunities and interesting projects.
+                Whether you have a question or just want to say hi, I'll try my best to get back to you!
+            </p>
+            <div class="cta-actions">
+                <a href="mailto:seth@example.com" class="btn btn-primary">Get In Touch</a>
+                <a href="{{ url_for('resume') }}" class="btn btn-outline">View Resume</a>
+                <a href="{{ url_for('portfolio') }}" class="btn btn-outline">View Portfolio</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

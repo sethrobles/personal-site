@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% from '_components/card.html' import blog_card %}
+
+{% block title %}Blog - Seth Robles{% endblock %}
+{% block description %}Read my latest thoughts on technology, development, and industry insights.{% endblock %}
+
+{% block content %}
+<section class="projects-header">
+    <div class="container">
+        <header class="section-header">
+            <h1 class="section-title">Blog</h1>
+            <p class="section-description">Thoughts on technology, development, and industry insights</p>
+        </header>
+
+        <div class="projects-controls">
+            <div class="search-box" style="position:relative;">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="position:absolute;left:0.75rem;top:50%;transform:translateY(-50%);pointer-events:none;">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input type="text" id="blog-search" placeholder="Search blog posts..." class="search-input" style="padding-left:2.5rem;">
+            </div>
+
+            <div class="tag-filters" id="blog-tag-filters">
+                <button class="tag-filter active" data-tag="all">All</button>
+                {% set all_tags = [] %}
+                {% for post in posts %}
+                    {% if post.metadata.tags %}
+                        {% for tag in post.metadata.tags %}
+                            {% if tag not in all_tags %}
+                                {% set _ = all_tags.append(tag) %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+
+                {% for tag in all_tags[:10] %}
+                <button class="tag-filter" data-tag="{{ tag }}">{{ tag }}</button>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="projects-content">
+    <div class="container">
+        <div class="projects-grid" id="blog-grid">
+            {% from '_components/entry_card.html' import entry_card %}
+            {% for entry in posts %}
+                {{ entry_card(entry) }}
+            {% endfor %}
+        </div>
+
+        <div class="no-results" id="no-blog-results" style="display: none;">
+            <div class="no-results-content">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <h3>No blog posts found</h3>
+                <p>Try adjusting your search or filter criteria</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Blog filtering and search functionality
+    const blogSearchInput = document.getElementById('blog-search');
+    const blogTagFilters = document.querySelectorAll('#blog-tag-filters .tag-filter');
+    const blogGrid = document.getElementById('blog-grid');
+    const noBlogResults = document.getElementById('no-blog-results');
+    const entryCards = document.querySelectorAll('.entry-card');
+
+    let currentBlogFilter = 'all';
+    let currentBlogSearch = '';
+
+    function filterBlogs() {
+        let visibleCount = 0;
+
+        entryCards.forEach(card => {
+            const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
+            const tags = card.getAttribute('data-tags')?.toLowerCase() || '';
+            const summary = card.querySelector('.card-summary')?.textContent.toLowerCase() || '';
+            // Search in title, tags, and summary
+            const matchesSearch = currentBlogSearch === '' || title.includes(currentBlogSearch) || tags.includes(currentBlogSearch) || summary.includes(currentBlogSearch);
+            const matchesFilter = currentBlogFilter === 'all' || tags.split(' ').includes(currentBlogFilter);
+
+            if (matchesSearch && matchesFilter) {
+                card.style.display = 'block';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // Show/hide no results message
+        if (visibleCount === 0) {
+            noBlogResults.style.display = 'block';
+            blogGrid.style.display = 'none';
+        } else {
+            noBlogResults.style.display = 'none';
+            blogGrid.style.display = 'grid';
+        }
+    }
+
+    // Search functionality
+    blogSearchInput.addEventListener('input', (e) => {
+        currentBlogSearch = e.target.value.toLowerCase();
+        filterBlogs();
+    });
+
+    // Tag filtering
+    blogTagFilters.forEach(filter => {
+        filter.addEventListener('click', () => {
+            // Update active state
+            blogTagFilters.forEach(f => f.classList.remove('active'));
+            filter.classList.add('active');
+
+            // Update filter
+            currentBlogFilter = filter.getAttribute('data-tag');
+            filterBlogs();
+        });
+    });
+</script>
+{% endblock %}

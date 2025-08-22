@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block title %}Projects - Seth Robles{% endblock %}
+{% block description %}Explore my portfolio of software projects, web applications, and technical contributions.{% endblock %}
+
+{% block content %}
+<section class="projects-header">
+    <div class="container">
+        <header class="section-header">
+            <h1 class="section-title">My Projects</h1>
+            <p class="section-description">A collection of my work, experiments, and contributions to the tech community</p>
+        </header>
+
+        <div class="projects-controls">
+            <div class="search-box" style="position:relative;">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="position:absolute;left:0.75rem;top:50%;transform:translateY(-50%);pointer-events:none;">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input type="text" id="project-search" placeholder="Search projects..." class="search-input" style="padding-left:2.5rem;">
+            </div>
+
+            <div class="tag-filters" id="tag-filters">
+                <button class="tag-filter active" data-tag="all">All</button>
+                {% set all_tags = [] %}
+                {% for project in projects %}
+                    {% if project.metadata.tags %}
+                        {% for tag in project.metadata.tags %}
+                            {% if tag not in all_tags %}
+                                {% set _ = all_tags.append(tag) %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+
+                {% for tag in all_tags[:10] %}
+                <button class="tag-filter" data-tag="{{ tag }}">{{ tag }}</button>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="projects-content">
+    <div class="container">
+        <div class="projects-grid" id="projects-grid">
+            {% from '_components/entry_card.html' import entry_card %}
+            {% for entry in projects %}
+                {{ entry_card(entry) }}
+            {% endfor %}
+        </div>
+
+        <div class="no-results" id="no-results" style="display: none;">
+            <div class="no-results-content">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <h3>No projects found</h3>
+                <p>Try adjusting your search or filter criteria</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Project filtering and search functionality
+    const searchInput = document.getElementById('project-search');
+    const tagFilters = document.querySelectorAll('.tag-filter');
+    const projectsGrid = document.getElementById('projects-grid');
+    const noResults = document.getElementById('no-results');
+    const entryCards = document.querySelectorAll('.entry-card');
+
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    function filterProjects() {
+        let visibleCount = 0;
+
+        entryCards.forEach(card => {
+            const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
+            const tags = card.getAttribute('data-tags')?.toLowerCase() || '';
+            const summary = card.querySelector('.card-summary')?.textContent.toLowerCase() || '';
+            // Search in title, tags, and summary
+            const matchesSearch = currentSearch === '' || title.includes(currentSearch) || tags.includes(currentSearch) || summary.includes(currentSearch);
+            const matchesFilter = currentFilter === 'all' || tags.split(' ').includes(currentFilter);
+
+            if (matchesSearch && matchesFilter) {
+                card.style.display = 'block';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // Show/hide no results message
+        if (visibleCount === 0) {
+            noResults.style.display = 'block';
+            projectsGrid.style.display = 'none';
+        } else {
+            noResults.style.display = 'none';
+            projectsGrid.style.display = 'grid';
+        }
+    }
+
+    // Search functionality
+    searchInput.addEventListener('input', (e) => {
+        currentSearch = e.target.value.toLowerCase();
+        filterProjects();
+    });
+
+    // Tag filtering
+    tagFilters.forEach(filter => {
+        filter.addEventListener('click', () => {
+            // Update active state
+            tagFilters.forEach(f => f.classList.remove('active'));
+            filter.classList.add('active');
+
+            // Update filter
+            currentFilter = filter.getAttribute('data-tag');
+            filterProjects();
+        });
+    });
+</script>
+{% endblock %}

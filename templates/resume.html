@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}Resume - Seth Robles{% endblock %}
+{% block description %}Download Seth Robles' resume and view professional experience, skills, and qualifications.{% endblock %}
+
+{% block content %}
+<section class="resume-header">
+    <div class="container">
+        <header class="section-header">
+            <h1 class="section-title">Resume</h1>
+            <p class="section-description">Professional experience, skills, and qualifications</p>
+        </header>
+    </div>
+</section>
+
+<section class="resume-content">
+    <div class="container">
+        <div class="resume-main">
+            <!-- Resume Section -->
+            <div class="resume-section">
+                <div class="resume-preview">
+                    <div class="pdf-embed">
+                        <iframe src="{{ url_for('uploads', filename='resume.pdf') }}#toolbar=0"
+                                class="pdf-viewer"
+                                title="Seth Robles Resume">
+                            <p>Your browser doesn't support PDFs.
+                            <a href="{{ url_for('uploads', filename='resume.pdf') }}" target="_blank">Download the PDF</a>.</p>
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="resume-actions">
+                    <a href="{{ url_for('uploads', filename='resume.pdf') }}"
+                       class="btn btn-primary"
+                       download="Seth_Robles_Resume.pdf">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7,10 12,15 17,10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Download Resume
+                    </a>
+
+                    <a href="{{ url_for('uploads', filename='resume.pdf') }}"
+                       class="btn btn-outline"
+                       target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15,3 21,3 21,9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                        Open in New Tab
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="resume-info">
+            <div class="info-card">
+                <h3 class="info-title">Quick Contact</h3>
+                <div class="info-content">
+                    <p><strong>Email:</strong> <a href="mailto:seth@example.com">seth@example.com</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/sethrobles" target="_blank" rel="noopener noreferrer">linkedin.com/in/sethrobles</a></p>
+                    <p><strong>GitHub:</strong> <a href="https://github.com/sethrobles" target="_blank" rel="noopener noreferrer">github.com/sethrobles</a></p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3 class="info-title">Key Skills</h3>
+                <div class="info-content">
+                    <div class="skills-grid">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">AWS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="resume-navigation">
+            <a href="{{ url_for('portfolio') }}" class="btn btn-outline">
+                View Portfolio →
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Page Not Found - Seth Robles{% endblock %}
+{% block description %}The page you're looking for doesn't exist.{% endblock %}
+
+{% block content %}
+<section class="error-page">
+    <div class="container">
+        <div class="error-content">
+            <div class="error-icon">
+                <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="15" y1="9" x2="9" y2="15"></line>
+                    <line x1="9" y1="9" x2="15" y2="15"></line>
+                </svg>
+            </div>
+
+            <h1 class="error-title">404</h1>
+            <h2 class="error-subtitle">Page Not Found</h2>
+            <p class="error-description">
+                The page you're looking for doesn't exist or has been moved.
+                Let's get you back on track.
+            </p>
+
+            <div class="error-actions">
+                <a href="{{ url_for('home') }}" class="btn btn-primary">Go Home</a>
+                <a href="{{ url_for('projects_index') }}" class="btn btn-outline">View Projects</a>
+            </div>
+
+            <div class="error-links">
+                <p>Or try these popular pages:</p>
+                <ul class="error-links-list">
+                    <li><a href="{{ url_for('resume') }}">Resume</a></li>
+                    <li><a href="{{ url_for('portfolio') }}">Portfolio</a></li>
+                    <li><a href="mailto:seth@example.com">Contact Me</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

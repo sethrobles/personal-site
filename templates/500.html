@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Server Error - Seth Robles{% endblock %}
+{% block description %}Something went wrong on our end.{% endblock %}
+
+{% block content %}
+<section class="error-page">
+    <div class="container">
+        <div class="error-content">
+            <div class="error-icon">
+                <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+            </div>
+
+            <h1 class="error-title">500</h1>
+            <h2 class="error-subtitle">Server Error</h2>
+            <p class="error-description">
+                Something went wrong on our end. We're working to fix this issue.
+                Please try again in a few moments.
+            </p>
+
+            <div class="error-actions">
+                <a href="{{ url_for('home') }}" class="btn btn-primary">Go Home</a>
+                <button onclick="window.location.reload()" class="btn btn-outline">Try Again</button>
+            </div>
+
+            <div class="error-links">
+                <p>If the problem persists, please contact me:</p>
+                <ul class="error-links-list">
+                    <li><a href="mailto:seth@example.com">seth@example.com</a></li>
+                    <li><a href="https://github.com/sethrobles" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
