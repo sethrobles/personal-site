@@ -1,107 +1,54 @@
 ---
 type: "project"
 title: "Suction Tank Robot"
-slug: "suction-tank-robot"
+slug: "suction-tank"
 date: "2025-08-21"
 tags: ["Prototyping", "3D Printing", "FDM Printing"]
-thumbnail: "suction-tank-robot-thumb.jpg"
-hero: "example-project-hero.jpg"
-summary: "A sample project to demonstrate the portfolio system's capabilities with Markdown rendering, code highlighting, and LaTeX support."
-github_url: "https://github.com/sethrobles/example-project"
-live_url: "https://example-project.demo.com"
+thumbnail: "suction-tank-thumb.jpg"
+# hero: "suction-tank-hero.jpg"
+summary: "A prototyped tank-style robot that uses suction to adhere to surfaces, designed with 3D printed parts and modular components."
+github_url: "https://github.com/sethrobles/suction-tank"
+# live_url: ""
 show_toc: false
 hidden: false
 ---
 
-# Example Project
+# Suction Tank Robot
 
-This is a sample project that demonstrates the portfolio system's capabilities.
+This project was my attempt to create a **tank-style robot that climbs and holds position using suction**. The idea was to prototype a platform that could traverse surfaces where wheels or tracks alone wouldn’t provide enough grip.
 
 ## Features
 
-- **Markdown Rendering**: Full Markdown support with extensions
-- **Code Highlighting**: Syntax highlighting for multiple languages
-- **LaTeX Support**: Mathematical equations using MathJax
-- **Responsive Design**: Mobile-first approach
-- **Dark/Light Mode**: Theme switching with CSS variables
+- **Tank Drive**: Independent tracks for maneuverability.
+- **Suction Chamber**: Designed a sealed cavity beneath the chassis to generate suction and hold the robot against flat surfaces.
+- **3D Printed Frame**: Fully FDM-printed parts, optimized for modularity and quick reprints.
+- **Compact Motor Integration**: Small DC motors fitted into custom housings to drive the tracks.
 
-## Code Examples
+## Prototyping Process
 
-Here's some Python code with syntax highlighting:
+I went through several design iterations in CAD before printing a working prototype:
 
-```python
-from flask import Flask, render_template
-import markdown
+1. **Frame & Tracks** – Modeled tank treads with integrated sprockets for better traction.
+2. **Suction System** – Experimented with gasket materials and chamber size to maximize holding force.
+3. **Assembly** – Printed parts on an FDM printer and tested modular swaps for track tensioning and suction seals.
 
-app = Flask(__name__)
+Here’s an early chassis prototype:
 
-@app.route('/')
-def home():
-    return render_template('home.html')
+<!-- ![Chassis Prototype](media/suction-tank/images/chassis-prototype.png) -->
 
-if __name__ == '__main__':
-    app.run(debug=True)
-```
+## Challenges
 
-And some JavaScript:
+- Maintaining suction while allowing movement.
+- Designing a frame that could house motors, a vacuum pump, and the seal without being bulky.
+- Balancing weight so the robot could stay adhered without sacrificing mobility.
 
-```javascript
-class PortfolioWidget {
-    constructor(containerId) {
-        this.container = document.getElementById(containerId);
-        this.init();
-    }
+## Future Plans
 
-    init() {
-        console.log('Widget initialized!');
-    }
-}
-```
+- [ ] Integrate sensors for wall/ceiling navigation.
+- [ ] Add wireless control and telemetry.
+- [ ] Refine suction seals for better efficiency.
+- [ ] Explore soft robotics-inspired adhesion techniques.
 
-## Mathematical Content
+---
 
-The portfolio supports LaTeX equations:
-
-Inline math: $E = mc^2$
-
-Block math:
-
-$$
-\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
-$$
-
-## Project Structure
-
-```
-project/
-├── app.py
-├── config.py
-├── templates/
-│   ├── base.html
-│   └── home.html
-├── static/
-│   ├── css/
-│   └── js/
-└── content/
-    └── projects/
-```
-
-## Technologies Used
-
-- **Backend**: Python, Flask
-- **Frontend**: HTML5, CSS3, JavaScript
-- **Content**: Markdown with frontmatter
-- **Styling**: CSS Grid, Flexbox, CSS Variables
-- **Deployment**: Render, Gunicorn
-
-## Future Enhancements
-
-- [ ] Database integration
-- [ ] Blog functionality
-- [ ] Advanced search
-- [ ] Analytics dashboard
-- [ ] API endpoints
-
-## Conclusion
-
-This example project showcases the portfolio system's capabilities and provides a foundation for real projects to be added.
+This project combined **mechanical prototyping, CAD iteration, and hands-on testing**. While still in its early stages, the suction tank robot gave me valuable insight into designing for unconventional mobility systems.

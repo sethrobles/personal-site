@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navbar-container">
         <div class="navbar-brand">
-            <a href="{{ url_for('home') }}" class="navbar-logo">
+            <a href="/index.html" class="navbar-logo">
                 Seth Robles
             </a>
         </div>
@@ -11,21 +11,11 @@
         </button>
 
         <div class="navbar-menu">
-            <a href="{{ url_for('home') }}" class="navbar-link {% if request.endpoint == 'home' %}active{% endif %}">
-                Home
-            </a>
-            <a href="{{ url_for('projects_index') }}" class="navbar-link {% if request.endpoint == 'projects_index' %}active{% endif %}">
-                Projects
-            </a>
-            <a href="{{ url_for('resume') }}" class="navbar-link {% if request.endpoint == 'resume' %}active{% endif %}">
-                Resume
-            </a>
-            <a href="{{ url_for('portfolio') }}" class="navbar-link {% if request.endpoint == 'portfolio' %}active{% endif %}">
-                Portfolio
-            </a>
-            <a href="{{ url_for('blog_index') }}" class="navbar-link {% if request.endpoint == 'blog_index' %}active{% endif %}">
-                Blog
-            </a>
+            <a href="/index.html" class="navbar-link">Home</a>
+            <a href="/projects_index.html" class="navbar-link">Projects</a>
+            <a href="/blog_index.html" class="navbar-link">Blog</a>
+            <a href="/resume.html" class="navbar-link">Resume</a>
+            <a href="/portfolio.html" class="navbar-link">Portfolio</a>
         </div>
     </div>
 </nav>

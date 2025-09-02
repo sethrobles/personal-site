@@ -8,31 +8,27 @@
     <div class="hero-container">
         <div class="hero-content">
             <h1 class="hero-title">Hi, I'm Seth Robles</h1>
-            <p class="hero-subtitle">Software Engineer & Developer</p>
+            <p class="hero-subtitle">Mechanical Engineer and Robotocist at MIT</p>
             <p class="hero-description">
-                I build modern web applications and solve complex problems with clean, efficient code.
-                Passionate about technology, continuous learning, and creating impactful solutions.
+                I enjoy building robots, integrated technology, and apps. I am passionate about continuous learning, mentoring others, and creating impactful solutions.
             </p>
             <div class="hero-actions">
-                <a href="{{ url_for('projects_index') }}" class="btn btn-primary">View My Work</a>
-                <a href="{{ url_for('resume') }}" class="btn btn-secondary">Download Resume</a>
-                <a href="{{ url_for('portfolio') }}" class="btn btn-outline">View Portfolio</a>
+                <a href="/projects_index.html" class="btn btn-primary">View My Work</a>
+                <a href="/resume.html" class="btn btn-secondary">Download Resume</a>
+                <a href="/portfolio.html" class="btn btn-outline">View Portfolio</a>
             </div>
         </div>
 
         <div class="hero-image">
             <div class="hero-avatar">
-                <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                </svg>
+                <img src="/static/uploads/personal/seth-photo.jpeg" alt="Seth Robles" style="width:220px;height:220px;border-radius:50%;object-fit:cover;box-shadow:0 4px 24px rgba(0,0,0,0.12);border:6px solid #fff;">
             </div>
         </div>
     </div>
 </section>
 
 <section class="featured-projects">
-    <div class="container">
+    <div class="container", id = "featured-projects">
         <header class="section-header">
             <h2 class="section-title">Featured Work</h2>
             <p class="section-description">A selection of my recent projects and blog posts</p>
@@ -46,8 +42,8 @@
         </div>
 
         <div class="section-actions">
-            <a href="{{ url_for('projects_index') }}" class="btn btn-outline">View All Projects</a>
-            <a href="{{ url_for('blog_index') }}" class="btn btn-outline">View All Blogs</a>
+            <a href="/projects_index.html" class="btn btn-outline">View All Projects</a>
+            <a href="/blog_index.html" class="btn btn-outline">View All Blogs</a>
         </div>
     </div>
 </section>
@@ -62,40 +58,167 @@
         <div class="hobbies-grid">
             <div class="hobby-widget">
                 <h3 class="hobby-title">🏃‍♂️ Running & Fitness</h3>
+                <iframe height='454' width='300' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/149255842/latest-rides/881b64a812f22d2154b1a80a870b66ec606887d1'></iframe>
                 <div id="strava-widget" class="strava-widget">
-                    <div class="widget-placeholder">
-                        <p>Loading Strava activities...</p>
-                    </div>
+                    <!-- No additional Strava placeholder or coming soon message -->
                 </div>
             </div>
 
             <div class="hobby-widget">
                 <h3 class="hobby-title">📚 Reading</h3>
                 <div id="goodreads-widget" class="goodreads-widget">
-                    <div class="widget-placeholder">
-                        <p>Goodreads widget coming soon...</p>
-                        <!-- TODO: Integrate with Goodreads API or embed -->
+                    <!-- Goodreads widget start -->
+                    <style type="text/css" media="screen">
+                      .gr_custom_container_ {
+                        border: 1px solid gray;
+                        border-radius:10px;
+                        padding: 10px 5px 10px 5px;
+                        background-color: #FFF;
+                        color: #000;
+                        width: 300px
+                      }
+                      .gr_custom_header_ {
+                        border-bottom: 1px solid gray;
+                        width: 100%;
+                        margin-bottom: 5px;
+                        text-align: center;
+                        font-size: 120%
+                      }
+                      .gr_custom_each_container_ {
+                        width: 100%;
+                        clear: both;
+                        margin-bottom: 10px;
+                        overflow: auto;
+                        padding-bottom: 4px;
+                        border-bottom: 1px solid #aaa;
+                      }
+                      .gr_custom_book_container_ {
+                        overflow: hidden;
+                        height: 60px;
+                        float: left;
+                        margin-right: 4px;
+                        width: 39px;
+                      }
+                      .gr_custom_author_ {
+                        font-size: 10px;
+                      }
+                      .gr_custom_tags_ {
+                        font-size: 10px;
+                        color: gray;
+                      }
+                      .gr_custom_rating_ {
+                        float: right;
+                      }
+                    </style>
+                    <!-- Most of this is hardcoded as a fallback is javascript issues occur -->
+                    <div id="gr_custom_widget_">
+                        <div class="gr_custom_container_">
+                            <h2 class="gr_custom_header_">
+                                <a style="text-decoration: none;" rel="nofollow" href="https://www.goodreads.com/review/list/186300699-seth-robles?shelf=read&amp;utm_medium=api&amp;utm_source=custom_widget">Seth's Bookshelf</a>
+                            </h2>
+                            <div class="gr_custom_each_container_">
+                                <div class="gr_custom_book_container_">
+                                    <a title="All the Light We Cannot See" rel="nofollow" href="https://www.goodreads.com/review/show/7202514491?utm_medium=api&amp;utm_source=custom_widget"><img alt="All the Light We Cannot See" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1451445646l/18143977._SY75_.jpg" /></a>
+                                </div>
+                                <div class="gr_custom_rating_">
+                                    <span class=" staticStars notranslate" title="it was amazing"><img alt="it was amazing" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /></span>
+                                </div>
+                                <div class="gr_custom_title_">
+                                    <a rel="nofollow" href="https://www.goodreads.com/review/show/7202514491?utm_medium=api&amp;utm_source=custom_widget">All the Light We Cannot See</a>
+                                </div>
+                                <div class="gr_custom_author_">
+                                    by <a rel="nofollow" href="https://www.goodreads.com/author/show/28186.Anthony_Doerr">Anthony Doerr</a>
+                                </div>
+                            </div>
+                            <div class="gr_custom_each_container_">
+                                <div class="gr_custom_book_container_">
+                                    <a title="Meditations" rel="nofollow" href="https://www.goodreads.com/review/show/7202512462?utm_medium=api&amp;utm_source=custom_widget"><img alt="Meditations" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1421618636l/30659._SY75_.jpg" /></a>
+                                </div>
+                                <div class="gr_custom_rating_">
+                                    <span class=" staticStars notranslate" title="it was amazing"><img alt="it was amazing" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /></span>
+                                </div>
+                                <div class="gr_custom_title_">
+                                    <a rel="nofollow" href="https://www.goodreads.com/review/show/7202512462?utm_medium=api&amp;utm_source=custom_widget">Meditations</a>
+                                </div>
+                                <div class="gr_custom_author_">
+                                    by <a rel="nofollow" href="https://www.goodreads.com/author/show/17212.Marcus_Aurelius">Marcus Aurelius</a>
+                                </div>
+                            </div>
+                            <div class="gr_custom_each_container_">
+                                <div class="gr_custom_book_container_">
+                                    <a title="Life Is Hard: How Philosophy Can Help Us Find Our Way" rel="nofollow" href="https://www.goodreads.com/review/show/7202510156?utm_medium=api&amp;utm_source=custom_widget"><img alt="Life Is Hard: How Philosophy Can Help Us Find Our Way" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1674052675l/59785502._SY75_.jpg" /></a>
+                                </div>
+                                <div class="gr_custom_rating_">
+                                    <span class=" staticStars notranslate" title="really liked it"><img alt="really liked it" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /></span>
+                                </div>
+                                <div class="gr_custom_title_">
+                                    <a rel="nofollow" href="https://www.goodreads.com/review/show/7202510156?utm_medium=api&amp;utm_source=custom_widget">Life Is Hard: How Philosophy Can Help Us Find Our Way</a>
+                                </div>
+                                <div class="gr_custom_author_">
+                                    by <a rel="nofollow" href="https://www.goodreads.com/author/show/408444.Kieran_Setiya">Kieran Setiya</a>
+                                </div>
+                            </div>
+                            <div class="gr_custom_each_container_">
+                                <div class="gr_custom_book_container_">
+                                    <a title="Red Queen (Red Queen, #1)" rel="nofollow" href="https://www.goodreads.com/review/show/7202508724?utm_medium=api&amp;utm_source=custom_widget"><img alt="Red Queen" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1449778912l/22328546._SY75_.jpg" /></a>
+                                </div>
+                                <div class="gr_custom_rating_">
+                                    <span class=" staticStars notranslate" title="liked it"><img alt="liked it" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /></span>
+                                </div>
+                                <div class="gr_custom_title_">
+                                    <a rel="nofollow" href="https://www.goodreads.com/review/show/7202508724?utm_medium=api&amp;utm_source=custom_widget">Red Queen</a>
+                                </div>
+                                <div class="gr_custom_author_">
+                                    by <a rel="nofollow" href="https://www.goodreads.com/author/show/7074943.Victoria_Aveyard">Victoria Aveyard</a>
+                                </div>
+                            </div>
+                            <div class="gr_custom_each_container_">
+                                <div class="gr_custom_book_container_">
+                                    <a title="Divergent (Divergent, #1)" rel="nofollow" href="https://www.goodreads.com/review/show/7202504647?utm_medium=api&amp;utm_source=custom_widget"><img alt="Divergent" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1618526890l/13335037._SY75_.jpg" /></a>
+                                </div>
+                                <div class="gr_custom_rating_">
+                                    <span class=" staticStars notranslate" title="really liked it"><img alt="really liked it" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /></span>
+                                </div>
+                                <div class="gr_custom_title_">
+                                    <a rel="nofollow" href="https://www.goodreads.com/review/show/7202504647?utm_medium=api&amp;utm_source=custom_widget">Divergent</a>
+                                </div>
+                                <div class="gr_custom_author_">
+                                    by <a rel="nofollow" href="https://www.goodreads.com/author/show/4039811.Veronica_Roth">Veronica Roth</a>
+                                </div>
+                            </div>
+                            <br style="clear: both"/>
+                            <center>
+                                <a rel="nofollow" href="https://www.goodreads.com/"><img alt="goodreads.com" style="border:0" src="https://s.gr-assets.com/images/widget/widget_logo.gif" /></a>
+                            </center>
+                            <noscript>
+                                Share <a rel="nofollow" href="https://www.goodreads.com/">book reviews</a> and ratings with Seth, and even join a <a rel="nofollow" href="https://www.goodreads.com/group">book club</a> on Goodreads.
+                            </noscript>
+                        </div>
                     </div>
+                    <script src="https://www.goodreads.com/review/custom_widget/186300699.Seth's%20bookshelf:%20read?cover_position=&cover_size=&num_books=5&order=&shelf=&sort=&widget_bg_transparent=" type="text/javascript" charset="utf-8"></script>
+                    <!-- Goodreads widget end -->
+                </div>
+            </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="contact-cta">
+<!-- <section class="contact-cta">
     <div class="container">
         <div class="cta-content">
-            <h2 class="cta-title">Let's Work Together</h2>
+            <h2 class="section-title">Let's Work Together</h2>
             <p class="cta-description">
                 I'm always interested in new opportunities and interesting projects.
                 Whether you have a question or just want to say hi, I'll try my best to get back to you!
             </p>
             <div class="cta-actions">
                 <a href="mailto:seth@example.com" class="btn btn-primary">Get In Touch</a>
-                <a href="{{ url_for('resume') }}" class="btn btn-outline">View Resume</a>
-                <a href="{{ url_for('portfolio') }}" class="btn btn-outline">View Portfolio</a>
+                <a href="/resume.html" class="btn btn-outline">View Resume</a>
+                <a href="/portfolio.html" class="btn btn-outline">View Portfolio</a>
             </div>
         </div>
     </div>
-</section>
+</section> -->
 {% endblock %}

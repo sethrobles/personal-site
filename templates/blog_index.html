@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% from '_components/card.html' import blog_card %}
 
 {% block title %}Blog - Seth Robles{% endblock %}
 {% block description %}Read my latest thoughts on technology, development, and industry insights.{% endblock %}
@@ -64,63 +63,14 @@
     </div>
 </section>
 
+<script src="/static/js/search.js"></script>
 <script>
-    // Blog filtering and search functionality
-    const blogSearchInput = document.getElementById('blog-search');
-    const blogTagFilters = document.querySelectorAll('#blog-tag-filters .tag-filter');
-    const blogGrid = document.getElementById('blog-grid');
-    const noBlogResults = document.getElementById('no-blog-results');
-    const entryCards = document.querySelectorAll('.entry-card');
-
-    let currentBlogFilter = 'all';
-    let currentBlogSearch = '';
-
-    function filterBlogs() {
-        let visibleCount = 0;
-
-        entryCards.forEach(card => {
-            const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
-            const tags = card.getAttribute('data-tags')?.toLowerCase() || '';
-            const summary = card.querySelector('.card-summary')?.textContent.toLowerCase() || '';
-            // Search in title, tags, and summary
-            const matchesSearch = currentBlogSearch === '' || title.includes(currentBlogSearch) || tags.includes(currentBlogSearch) || summary.includes(currentBlogSearch);
-            const matchesFilter = currentBlogFilter === 'all' || tags.split(' ').includes(currentBlogFilter);
-
-            if (matchesSearch && matchesFilter) {
-                card.style.display = 'block';
-                visibleCount++;
-            } else {
-                card.style.display = 'none';
-            }
-        });
-
-        // Show/hide no results message
-        if (visibleCount === 0) {
-            noBlogResults.style.display = 'block';
-            blogGrid.style.display = 'none';
-        } else {
-            noBlogResults.style.display = 'none';
-            blogGrid.style.display = 'grid';
-        }
-    }
-
-    // Search functionality
-    blogSearchInput.addEventListener('input', (e) => {
-        currentBlogSearch = e.target.value.toLowerCase();
-        filterBlogs();
-    });
-
-    // Tag filtering
-    blogTagFilters.forEach(filter => {
-        filter.addEventListener('click', () => {
-            // Update active state
-            blogTagFilters.forEach(f => f.classList.remove('active'));
-            filter.classList.add('active');
-
-            // Update filter
-            currentBlogFilter = filter.getAttribute('data-tag');
-            filterBlogs();
-        });
+    setupSearchAndFilter({
+        searchInputId: 'blog-search',
+        tagFilterSelector: '#blog-tag-filters .tag-filter',
+        gridId: 'blog-grid',
+        noResultsId: 'no-blog-results',
+        cardSelector: '.entry-card'
     });
 </script>
 {% endblock %}

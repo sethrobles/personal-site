@@ -7,26 +7,26 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ request.url }}">
+    <meta property="og:url" content="{{ socials.twitter }}">
     <meta property="og:title" content="{% block og_title %}Seth Robles - Portfolio{% endblock %}">
     <meta property="og:description" content="{% block og_description %}Seth Robles - Software Engineer and Developer Portfolio{% endblock %}">
-    <meta property="og:image" content="{% block og_image %}{{ url_for('static', filename='uploads/og-image.jpg') }}{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}/static/uploads/og-image.jpg{% endblock %}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{{ request.url }}">
+    <meta property="twitter:url" content="{{ socials.twitter }}">
     <meta property="twitter:title" content="{% block twitter_title %}Seth Robles - Portfolio{% endblock %}">
     <meta property="twitter:description" content="{% block twitter_description %}Seth Robles - Software Engineer and Developer Portfolio{% endblock %}">
-    <meta property="twitter:image" content="{% block twitter_image %}{{ url_for('static', filename='uploads/og-image.jpg') }}{% endblock %}">
+    <meta property="twitter:image" content="{% block twitter_image %}/static/uploads/og-image.jpg{% endblock %}">
 
     <title>{% block title %}Seth Robles - Portfolio{% endblock %}</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='uploads/favicon.ico') }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='uploads/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/x-icon" href="/static/uploads/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/uploads/apple-touch-icon.png">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="/static/css/base.css">
 
     <!-- MathJax for LaTeX support -->
     <script>
@@ -43,10 +43,6 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-    <!-- Plausible Analytics (if configured) -->
-    {% if config.PLAUSIBLE_DOMAIN %}
-    <script defer data-domain="{{ config.PLAUSIBLE_DOMAIN }}" src="https://plausible.io/js/script.js"></script>
-    {% endif %}
 </head>
 <body>
     <!-- Theme toggle button -->
@@ -76,7 +72,7 @@
     {% include '_components/footer.html' %}
 
     <!-- JavaScript -->
-    <script src="{{ url_for('static', filename='js/widgets.js') }}"></script>
+    <script src="/static/js/widgets.js"></script>
     <script>
         // Theme toggle functionality
         const themeToggle = document.getElementById('theme-toggle');

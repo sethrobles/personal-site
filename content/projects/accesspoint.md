@@ -4,14 +4,13 @@ title: "AccessPoint"
 slug: "accesspoint"
 date: "2025-05-15"
 tags: ["Python", "Flask", "Web Development"]
-thumbnail: "example-project-thumb.jpg"
+thumbnail: "landing-page.png"
 hero: "example-project-hero.jpg"
 summary: "A web platform offering services to connect underrepresented students with scholarships and opportunities, built with Flask and PostgreSQL."
 github_url: "https://github.com/sethrobles/example-project"
 live_url: "https://example-project.demo.com"
-show_toc: "false"
 show_toc: false
-hidden: true
+hidden: false
 ---
 
 I built **AccessPoint**, a website launched in March 2025, to centralize and streamline opportunities for underrepresented students. Rather than teaching modules, the focus was on creating a polished, service-oriented platform.

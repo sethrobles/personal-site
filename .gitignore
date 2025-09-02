@@ -280,3 +280,7 @@ temp/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+
+# Restart File
+restart.sh

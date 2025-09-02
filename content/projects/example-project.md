@@ -9,16 +9,16 @@ hero: "example-project-hero.jpg"
 summary: "A sample project to demonstrate the portfolio system's capabilities with Markdown rendering, code highlighting, and LaTeX support."
 github_url: "https://github.com/sethrobles/example-project"
 live_url: "https://example-project.demo.com"
-show_toc: "false"
 show_toc: false
 hidden: true
 ---
 
-This is a sample project that demonstrates the portfolio system's capabilities.
+This is an red LED array (32x32) design in KiCAD and will eventually ordered from JLCPCB. It is a 4-layer PCB board is using a STM32 controller, 16 shift regiseters. This is current in progress.
 
+Thank you to my friend Miguel for providing a lot of guidance on this project.
 ## Features
 
-- **Markdown Rendering**: Full Markdown support with extensions
+- **Markdown Rendering**:
 - **Code Highlighting**: Syntax highlighting for multiple languages
 - **LaTeX Support**: Mathematical equations using MathJax
 - **Responsive Design**: Mobile-first approach

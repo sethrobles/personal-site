@@ -588,6 +588,18 @@ a:hover {
     border-color: var(--accent);
 }
 
+/* Sections */
+
+#featured-projects {
+    padding: 3rem 0;
+}
+
+#hobbies {
+    padding: 3rem 0;
+}
+
+
+
 /* Hobby widgets */
 .hobby-widget {
     background: var(--bg-primary);
@@ -595,11 +607,27 @@ a:hover {
     border-radius: 12px;
     padding: 1.5rem;
     box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hobby-title {
     margin-bottom: 1rem;
     color: var(--text-primary);
+    text-align: center;
+}
+.strava-widget,
+.goodreads-widget {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.hobby-widget iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .widget-placeholder {
@@ -625,13 +653,16 @@ a:hover {
 
 .pdf-viewer {
     width: 100%;
-    height: 500px;
+    min-height: 80vh;
+    height: 80vh;
+    max-height: 90vh;
     border: none;
+    display: block;
 }
 
 .resume-actions {
     display: flex;
-    gap: 1rem;
+    gap: 4rem;
     flex-wrap: wrap;
 }
 

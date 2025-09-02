@@ -88,16 +88,8 @@ class StravaWidget {
     }
 
     renderPlaceholder() {
-        this.container.innerHTML = `
-            <div class="strava-placeholder">
-                <div class="placeholder-icon">🏃‍♂️</div>
-                <p>Strava integration coming soon!</p>
-                <p class="placeholder-subtitle">Connect your Strava account to see your latest activities here.</p>
-                <a href="https://strava.com" target="_blank" rel="noopener noreferrer" class="strava-link">
-                    Visit Strava
-                </a>
-            </div>
-        `;
+        // Do nothing: placeholder removed so only embedded widget shows
+        this.container.innerHTML = '';
     }
 }
 
@@ -115,16 +107,8 @@ class GoodreadsWidget {
     }
 
     renderPlaceholder() {
-        this.container.innerHTML = `
-            <div class="goodreads-placeholder">
-                <div class="placeholder-icon">📚</div>
-                <p>Goodreads integration coming soon!</p>
-                <p class="placeholder-subtitle">Connect your Goodreads account to see your reading progress and recent books.</p>
-                <a href="https://goodreads.com" target="_blank" rel="noopener noreferrer" class="goodreads-link">
-                    Visit Goodreads
-                </a>
-            </div>
-        `;
+        // Do nothing: placeholder removed so only embedded widget shows
+        this.container.innerHTML = '';
     }
 }
 
@@ -206,11 +190,9 @@ function initSmoothScrolling() {
 
 // Initialize all widgets when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+
     // Initialize Strava widget
     const stravaWidget = new StravaWidget('strava-widget');
-
-    // Initialize Goodreads widget
-    const goodreadsWidget = new GoodreadsWidget('goodreads-widget');
 
     // Initialize image lightbox
     const imageLightbox = new ImageLightbox();

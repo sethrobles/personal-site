@@ -23,7 +23,7 @@
 
             {% if project.metadata.hero %}
             <div class="project-hero">
-                <img src="{{ url_for('uploads', filename='projects/' ~ project.slug ~ '/' ~ project.metadata.hero) }}"
+                <img src="/static/uploads/projects/{{ project.slug }}/{{ project.metadata.hero }}"
                      alt="{{ project.metadata.title }}"
                      class="project-hero-image">
             </div>
@@ -72,7 +72,7 @@
             </div>
 
             <div class="nav-actions">
-                <a href="{{ url_for('projects_index') }}" class="btn btn-outline">
+                <a href="/projects_index.html" class="btn btn-outline">
                     ← Back to Projects
                 </a>
             </div>

@@ -63,63 +63,14 @@
     </div>
 </section>
 
+<script src="/static/js/search.js"></script>
 <script>
-    // Project filtering and search functionality
-    const searchInput = document.getElementById('project-search');
-    const tagFilters = document.querySelectorAll('.tag-filter');
-    const projectsGrid = document.getElementById('projects-grid');
-    const noResults = document.getElementById('no-results');
-    const entryCards = document.querySelectorAll('.entry-card');
-
-    let currentFilter = 'all';
-    let currentSearch = '';
-
-    function filterProjects() {
-        let visibleCount = 0;
-
-        entryCards.forEach(card => {
-            const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
-            const tags = card.getAttribute('data-tags')?.toLowerCase() || '';
-            const summary = card.querySelector('.card-summary')?.textContent.toLowerCase() || '';
-            // Search in title, tags, and summary
-            const matchesSearch = currentSearch === '' || title.includes(currentSearch) || tags.includes(currentSearch) || summary.includes(currentSearch);
-            const matchesFilter = currentFilter === 'all' || tags.split(' ').includes(currentFilter);
-
-            if (matchesSearch && matchesFilter) {
-                card.style.display = 'block';
-                visibleCount++;
-            } else {
-                card.style.display = 'none';
-            }
-        });
-
-        // Show/hide no results message
-        if (visibleCount === 0) {
-            noResults.style.display = 'block';
-            projectsGrid.style.display = 'none';
-        } else {
-            noResults.style.display = 'none';
-            projectsGrid.style.display = 'grid';
-        }
-    }
-
-    // Search functionality
-    searchInput.addEventListener('input', (e) => {
-        currentSearch = e.target.value.toLowerCase();
-        filterProjects();
-    });
-
-    // Tag filtering
-    tagFilters.forEach(filter => {
-        filter.addEventListener('click', () => {
-            // Update active state
-            tagFilters.forEach(f => f.classList.remove('active'));
-            filter.classList.add('active');
-
-            // Update filter
-            currentFilter = filter.getAttribute('data-tag');
-            filterProjects();
-        });
+    setupSearchAndFilter({
+        searchInputId: 'project-search',
+        tagFilterSelector: '#tag-filters .tag-filter',
+        gridId: 'projects-grid',
+        noResultsId: 'no-results',
+        cardSelector: '.entry-card'
     });
 </script>
 {% endblock %}

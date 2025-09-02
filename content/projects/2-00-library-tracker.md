@@ -8,6 +8,8 @@ thumbnail: "library_tracker.jpg"
 summary: "An Arduino-powered Library Tracker tool built for an elementary school librarian to help manage student tasks with LEDs, buttons, and a control board."
 github_url: ""
 live_url: ""
+show_toc: false
+hidden: false
 ---
 
 # 2.00 Library Tracker
@@ -31,26 +33,3 @@ We were asked to design a **low-tech, privacy-conscious, and classroom-friendly*
 - **Electronics**
   - An **Arduino Mega** provided sufficient GPIO pins for the many LEDs and buttons.
   - Hand-soldered connections for power, ground, and signals across the tracker board.
-
-## Code Example
-
-A simplified snippet showing how we toggled LEDs with button presses on the Arduino Mega:
-
-```cpp
-const int buttonPin = 2;
-const int ledPin = 13;
-int buttonState = 0;
-
-void setup() {
-  pinMode(buttonPin, INPUT);
-  pinMode(ledPin, OUTPUT);
-}
-
-void loop() {
-  buttonState = digitalRead(buttonPin);
-  if (buttonState == HIGH) {
-    digitalWrite(ledPin, HIGH);
-  } else {
-    digitalWrite(ledPin, LOW);
-  }
-}

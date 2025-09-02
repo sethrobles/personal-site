@@ -20,17 +20,17 @@
             <div class="resume-section">
                 <div class="resume-preview">
                     <div class="pdf-embed">
-                        <iframe src="{{ url_for('uploads', filename='resume.pdf') }}#toolbar=0"
+                        <iframe src="/static/uploads/resume.pdf#toolbar=0"
                                 class="pdf-viewer"
                                 title="Seth Robles Resume">
                             <p>Your browser doesn't support PDFs.
-                            <a href="{{ url_for('uploads', filename='resume.pdf') }}" target="_blank">Download the PDF</a>.</p>
+                            <a href="/static/uploads/resume.pdf" target="_blank">Download the PDF</a>.</p>
                         </iframe>
                     </div>
                 </div>
 
                 <div class="resume-actions">
-                    <a href="{{ url_for('uploads', filename='resume.pdf') }}"
+                    <a href="/static/uploads/resume.pdf"
                        class="btn btn-primary"
                        download="Seth_Robles_Resume.pdf">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -41,7 +41,7 @@
                         Download Resume
                     </a>
 
-                    <a href="{{ url_for('uploads', filename='resume.pdf') }}"
+                    <a href="/static/uploads/resume.pdf"
                        class="btn btn-outline"
                        target="_blank">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -85,7 +85,7 @@
 
         <!-- Navigation -->
         <div class="resume-navigation">
-            <a href="{{ url_for('portfolio') }}" class="btn btn-outline">
+            <a href="/portfolio.html" class="btn btn-outline">
                 View Portfolio →
             </a>
         </div>

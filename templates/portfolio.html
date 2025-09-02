@@ -20,17 +20,17 @@
             <div class="portfolio-section">
                 <div class="portfolio-preview">
                     <div class="pdf-embed">
-                        <iframe src="{{ url_for('uploads', filename='portfolio.pdf') }}#toolbar=0"
+                        <iframe src="/static/uploads/portfolio.pdf#toolbar=0"
                                 class="pdf-viewer"
                                 title="Seth Robles Portfolio">
                             <p>Your browser doesn't support PDFs.
-                            <a href="{{ url_for('uploads', filename='portfolio.pdf') }}" target="_blank">Download the PDF</a>.</p>
+                            <a href="/static/uploads/portfolio.pdf" target="_blank">Download the PDF</a>.</p>
                         </iframe>
                     </div>
                 </div>
 
                 <div class="portfolio-actions">
-                    <a href="{{ url_for('uploads', filename='portfolio.pdf') }}"
+                    <a href="/static/uploads/portfolio.pdf"
                        class="btn btn-primary"
                        download="Seth_Robles_Portfolio.pdf">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -41,7 +41,7 @@
                         Download Portfolio
                     </a>
 
-                    <a href="{{ url_for('uploads', filename='portfolio.pdf') }}"
+                    <a href="/static/uploads/portfolio.pdf"
                        class="btn btn-outline"
                        target="_blank">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -127,10 +127,10 @@
 
         <!-- Navigation -->
         <div class="portfolio-navigation">
-            <a href="{{ url_for('resume') }}" class="btn btn-outline">
+            <a href="/resume.html" class="btn btn-outline">
                 ← View Resume
             </a>
-            <a href="{{ url_for('projects_index') }}" class="btn btn-primary">
+            <a href="/projects_index.html" class="btn btn-primary">
                 View All Projects →
             </a>
         </div>

@@ -1,8 +1,8 @@
 {% macro entry_card(entry) %}
-<article class="card entry-card" data-tags="{{ entry.metadata.tags|join(' ') if entry.metadata.tags else '' }}">
+<article class="card entry-card" data-tags="{{ entry.metadata.tags|join(',') if entry.metadata.tags else '' }}">
     <div class="card-image">
     {% if entry.metadata.thumbnail %}
-        <img src="{{ url_for('uploads', filename=(entry.metadata.type == 'blog' and 'blogs/' or 'projects/') ~ entry.slug ~ '/' ~ entry.metadata.thumbnail) }}"
+    <img src="/static/uploads/{{ entry.metadata.type == 'blog' and 'blogs/' or 'projects/' }}{{ entry.slug }}/{{ entry.metadata.thumbnail }}"
              alt="{{ entry.metadata.title }}"
              class="card-thumbnail"
              loading="lazy">
@@ -21,7 +21,7 @@
         <header class="card-header">
             <div style="text-align:center">
                 <h3 class="card-title">
-                    <a href="{{ url_for(entry.metadata.type == 'blog' and 'blog_post' or 'project_detail', slug=entry.slug) }}" class="card-link">
+                    <a href="/{{ entry.metadata.type == 'blog' and 'blogs' or 'projects' }}/{{ entry.slug }}.html" class="card-link">
                         {{ entry.metadata.title }}
                     </a>
                 </h3>
