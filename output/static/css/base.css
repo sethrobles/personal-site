@@ -588,6 +588,18 @@ a:hover {
     border-color: var(--accent);
 }
 
+/* Sections */
+
+#featured-projects {
+    padding: 3rem 0;
+}
+
+#hobbies {
+    padding: 3rem 0;
+}
+
+
+
 /* Hobby widgets */
 .hobby-widget {
     background: var(--bg-primary);
