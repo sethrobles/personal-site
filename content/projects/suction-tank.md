@@ -3,7 +3,7 @@ type: "project"
 title: "Suction Tank Robot"
 slug: "suction-tank"
 date: "2025-08-21"
-tags: ["Prototyping", "3D Printing", "FDM Printing"]
+tags: ["Prototyping", "3D Printing", "FDM Printing", "Research"]
 thumbnail: "suction-tank-thumb.jpg"
 # hero: "suction-tank-hero.jpg"
 summary: "A prototyped tank-style robot that uses suction to adhere to surfaces, designed with 3D printed parts and modular components."
@@ -34,7 +34,7 @@ I went through several design iterations in CAD before printing a working protot
 
 Here’s an early chassis prototype:
 
-<!-- ![Chassis Prototype](media/suction-tank/images/chassis-prototype.png) -->
+![Chassis Prototype](suction-tank-thumb.jpg)
 
 ## Challenges
 

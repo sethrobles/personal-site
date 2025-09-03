@@ -4,7 +4,7 @@ title: "Teaching Physics at MITES"
 slug: "mites-physics-ta"
 date: "2024-07-20"
 tags: ["Teaching", "Physics", "MITES", "STEM Education"]
-thumbnail: "mites-physics-ta-thumb.jpeg"
+thumbnail: "mites_physics_ta_thumb.jpeg"
 # hero: "mites-physics-hero.jpg"
 summary: "Reflections on my summer as a physics TA for MITES, working with brilliant high school students and rediscovering the excitement of teaching science."
 show_toc: false
@@ -13,19 +13,17 @@ hidden: false
 
 # Teaching Physics at MITES
 
-This summer I had the chance to serve as a **Physics TA for MITES**, MIT’s program for talented high school students from underrepresented backgrounds. It was a whirlwind of problem sets, whiteboard scribbles, late-night grading, and (most importantly) the kind of questions that make you pause, smile, and think: *“Wow, they really get it.”*
+This summer I had the chance to serve as a residential **Physics TA for MITES**, MIT’s program for rising high school seniors from underrepresented backgrounds. The program lasted 6 weeks and presented an opportunity to grow as a teacher and mentor.
+
+My coworker, Jan, and I led a group of 13 students for the summer as residential advisors, acting as mentors outside of our teaching duties. Together, we planned Boston outings, gropu activities, and organized check-ins with students throughout the summer.
 
 ## What Stood Out
 
 There were a few moments that made the experience unforgettable:
 
-- **The Energy in the Room**: Even at 9 a.m., students were firing off questions about electromagnetism or projectile motion like it was a sport. Their curiosity set the tone.
-- **Teaching Clicks**: Watching a student go from “this equation is nonsense” to “oh, that’s just conservation of momentum” was addicting.
+- **Classrooms**: Recitations and lectures were moments of learning. Whether it was early or late, you could see the effort students put into understanding
+- **Teaching Clicks**: Watching a student go from “this equation is nonsense” to “oh yeah, that's parabolic motion"
 - **Peer Connection**: A lot of my role was being the bridge between professor and student—someone approachable who could say, “yeah, I also thought that was confusing at first.”
-
-## Favorite Teaching Moment
-
-One of my favorite parts was running through a demo on circuits. I brought in a breadboard and a few LEDs, and suddenly the abstract rules about current and resistance weren’t just symbols on a page—they were glowing lights in front of them. That’s when you realize *why* teaching matters: concepts become real.
 
 ## What I Learned
 
@@ -33,4 +31,12 @@ Being a TA wasn’t just about explaining physics—it was about learning how to
 
 ---
 
-In the end, MITES wasn’t just about students learning physics—it was about all of us, myself included, learning what it means to chase knowledge with excitement and persistence. And honestly, that’s the kind of lesson you can’t find in a textbook.
+In the end, MITES wasn't just about teaching or learning physics. It was about mentoring younger students, helping them chase knowledge with excitment. It was about helping teach persistence in problem solving. It was about connecting with others, and learning that it's all about the Delta.
+
+
+
+{{ carousel([
+  {'src': '/static/uploads/blogs/mites-physics-ta/mites_final_dinner.jpeg', 'alt': 'Final MITES Staff Dinner', 'caption': 'Final MITES Staff Dinner'},
+  {'src': '/static/uploads/blogs/mites-physics-ta/mites_board.jpeg', 'alt': 'Appreciation Board from Students', 'caption': 'Appreciation Board from Students'},
+  {'src': '/static/uploads/blogs/mites-physics-ta/mites_seth_and_jan.jpeg', 'alt': 'Jan and I', 'caption': 'Jan and I'}
+]) }}

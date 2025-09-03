@@ -15,15 +15,62 @@ def load_socials():
     return {}
 
 # Markdown and content helpers
+
+# Automatically rewrite image paths in markdown content for projects
+import re
+
+def fix_image_paths(md_content, slug, content_type):
+    folder = 'projects' if content_type == 'project' else 'blogs'
+    # For <img src="filename">
+    md_content = re.sub(
+        r'<img\s+src="([^"/][^"]+)">',
+        rf'<img src="/static/uploads/{folder}/{slug}/\1">',
+        md_content
+    )
+    md_content = re.sub(
+        r'<img\s+src="([^"/][^"]+)">',
+        rf'<img src="/static/uploads/{folder}/{slug}/\1">',
+        md_content
+    )
+    # For markdown images ![alt](filename)
+    md_content = re.sub(
+        r'!\[([^\]]*)\]\((?!http)([^)]+)\)',
+        rf'![\1](/static/uploads/{folder}/{slug}/\2)',
+        md_content
+    )
+    # (Removed carousel macro rewriting)
+    return md_content
+
+
+from jinja2 import Environment, FileSystemLoader
+
+# Set up a Jinja2 environment for macro rendering
+macro_env = Environment(loader=FileSystemLoader('templates'))
+carousel_macro = macro_env.get_template('_components/carousel.html').module.carousel
+
 def parse_markdown(md_path):
     post = frontmatter.load(md_path)
-    content = markdown.markdown(post.content, extensions=[
+    slug = md_path.stem
+    # Determine content type (project or blog)
+    if str(md_path).startswith('content/projects/'):
+        content_type = 'project'
+    elif str(md_path).startswith('content/blogs/'):
+        content_type = 'blog'
+    else:
+        content_type = None
+    if content_type:
+        fixed_content = fix_image_paths(post.content, slug, content_type)
+    else:
+        fixed_content = post.content
+    html = markdown.markdown(fixed_content, extensions=[
         'extra', 'toc', 'fenced_code', 'codehilite', 'sane_lists', 'admonition'
     ])
+    # Render the HTML through Jinja2 to process macro calls
+    html = macro_env.from_string(html).render(carousel=carousel_macro)
     return {
         'metadata': dict(post.metadata),
-        'content': content,
-        'slug': md_path.stem
+        'content': html,
+        'slug': slug
     }
 
 def get_projects():
@@ -47,7 +94,7 @@ def get_blogs():
     return blogs
 
 socials = load_socials()
-print("DEBUG socials", socials)
+
 projects = get_projects()
 blogs = get_blogs()
 
@@ -70,6 +117,7 @@ def entry_detail_context(template):
 
 
 
+
 site = Site.make_site(
     searchpath='templates',
     outpath='output',
@@ -82,7 +130,7 @@ site = Site.make_site(
 )
 
 # Debug: print outpath type and value
-print(f"site.outpath type: {type(site.outpath)}, value: {site.outpath}")
+# print(f"site.outpath type: {type(site.outpath)}, value: {site.outpath}")
 
 
 

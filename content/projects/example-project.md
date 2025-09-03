@@ -104,3 +104,11 @@ project/
 ## Conclusion
 
 This example project showcases the portfolio system's capabilities and provides a foundation for real projects to be added.
+
+
+{{ carousel([
+  {'src': 'suction-tank-thumb.jpg', 'alt': 'First', 'caption': 'First image'},
+  {'src': '/static/uploads/projects/suction-tank/suction-tank-thumb.jpg', 'alt': 'Second', 'caption': 'Second image'},
+  {'src': '/static/uploads/blogs/gtl-italy/gtl-experiment.jpeg', 'alt': 'Third', 'caption': 'Third image'},
+  {'src': '/static/uploads/blogs/gtl-italy/gtl-experiment.jpeg', 'alt': 'Fourth', 'caption': 'Fourth image'}
+]) }}

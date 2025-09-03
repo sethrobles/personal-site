@@ -13,6 +13,13 @@ show_toc: false
 hidden: true
 ---
 
+
+
+
+Links
+[Camp Kesem website](https://www.campkesem.org/)
+
+
 # A Week of Learning Flask
 
 This past week, I decided to take Flask seriously. I'd tinkered with it before, but never really built something that felt *usable*. By the end of the week, I had a simple blog running locally, a newfound respect for routing, and a list of mistakes I’ll probably laugh at later.
@@ -42,3 +49,11 @@ posts = [
 @app.route('/')
 def home():
     return render_template('home.html', posts=posts)
+
+
+{{ carousel([
+  {'src': '/static/uploads/blogs/gtl-italy/gtl-experiment.jpeg', 'alt': 'First', 'caption': 'First image'},
+  {'src': '/static/uploads/blogs/gtl-italy/gtl-experiment.jpeg', 'alt': 'Second', 'caption': 'Second image'},
+  {'src': '/static/uploads/blogs/gtl-italy/gtl-experiment.jpeg', 'alt': 'Third', 'caption': 'Third image'},
+  {'src': '/static/uploads/blogs/gtl-italy/gtl-experiment.jpeg', 'alt': 'Fourth', 'caption': 'Fourth image'}
+]) }}

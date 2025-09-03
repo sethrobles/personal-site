@@ -1180,3 +1180,9 @@ a:hover {
     font-size: 1.125rem;
     line-height: 1.6;
 }
+
+/* Lists for markdown */
+ul ul {
+  margin-left: 2em;
+  list-style-type: disc;
+}
