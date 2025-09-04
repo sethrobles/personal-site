@@ -413,25 +413,6 @@ a:hover {
     gap: 2rem;
 }
 
-.resume-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 3rem;
-    margin-bottom: 3rem;
-}
-
-/* Cards */
-.card {
-    background: var(--bg-primary);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: all 0.3s;
-    box-shadow: var(--shadow);
-}
-
-.card:hover {
-    transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
     border-color: var(--border-hover);
 }
@@ -788,19 +769,6 @@ a:hover {
 .portfolio-navigation .btn {
     flex: 1;
     min-width: 150px;
-}
-
-.info-card {
-    background: var(--bg-primary);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: var(--shadow);
-}
-
-.info-title {
-    margin-bottom: 1rem;
-    color: var(--text-primary);
 }
 
 .skills-grid {

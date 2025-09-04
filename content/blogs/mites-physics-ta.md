@@ -3,7 +3,7 @@ type: "blog"
 title: "Teaching Physics at MITES"
 slug: "mites-physics-ta"
 date: "2024-07-20"
-tags: ["Teaching", "Physics", "MITES", "STEM Education"]
+tags: ["Teaching", "Physics", "Mentoring"]
 thumbnail: "mites_physics_ta_thumb.jpeg"
 # hero: "mites-physics-hero.jpg"
 summary: "Reflections on my summer as a physics TA for MITES, working with brilliant high school students and rediscovering the excitement of teaching science."

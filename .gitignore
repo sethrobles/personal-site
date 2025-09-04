@@ -284,3 +284,9 @@ Thumbs.db
 
 # Restart File
 restart.sh
+
+# private
+/private/
+
+# output
+/output/

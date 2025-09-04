@@ -21,15 +21,10 @@ import re
 
 def fix_image_paths(md_content, slug, content_type):
     folder = 'projects' if content_type == 'project' else 'blogs'
-    # For <img src="filename">
+    # For <img src="filename"> or <img ... src="filename" ...>
     md_content = re.sub(
-        r'<img\s+src="([^"/][^"]+)">',
-        rf'<img src="/static/uploads/{folder}/{slug}/\1">',
-        md_content
-    )
-    md_content = re.sub(
-        r'<img\s+src="([^"/][^"]+)">',
-        rf'<img src="/static/uploads/{folder}/{slug}/\1">',
+        r'<img([^>]*?)src=["\"]([^"/][^"\"]+)["\"]([^>]*)>',
+        rf'<img\1src="/static/uploads/{folder}/{slug}/\2"\3>',
         md_content
     )
     # For markdown images ![alt](filename)
@@ -38,7 +33,6 @@ def fix_image_paths(md_content, slug, content_type):
         rf'![\1](/static/uploads/{folder}/{slug}/\2)',
         md_content
     )
-    # (Removed carousel macro rewriting)
     return md_content
 
 
@@ -130,7 +124,7 @@ site = Site.make_site(
 )
 
 # Debug: print outpath type and value
-# print(f"site.outpath type: {type(site.outpath)}, value: {site.outpath}")
+print(f"site.outpath type: {type(site.outpath)}, value: {site.outpath}")
 
 
 

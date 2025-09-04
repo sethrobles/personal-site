@@ -6,7 +6,7 @@ date: "2025-01-31"
 tags: ["GTL", "Italy", "Foreign Languages", "Teaching"]
 thumbnail: "gtl-italy-thumb.jpeg"
 hero: "gtl-italy-thumb.jpeg"
-summary: "A sample project to demonstrate the portfolio system's capabilities with Markdown rendering, code highlighting, and LaTeX support."
+summary: "A month spent in Italy, teaching high school students about physics, electronics, web development, and machine learning."
 github_url: "https://github.com/sethrobles/example-project"
 # live_url: "https://example-project.demo.com"
 show_toc: false
@@ -32,4 +32,4 @@ I was responsible for developing small problem sets that engaged student content
 
 I particularly appreciated this opportunity because of the ability to return to Italy. I lived there when I was younger, but now had the opportunity to do so as a host. It was an invaluable opportunity to learn more about Italian culture and myself.
 
-![Teaching demo](/static/uploads/blogs/gtl-italy/gtl-experiment.jpeg)
+![Teaching demo](gtl-experiment.jpeg)

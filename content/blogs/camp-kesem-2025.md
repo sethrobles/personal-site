@@ -15,7 +15,7 @@ hidden: false
 
 This past week, I had the opportunity to be at [Camp Kesem website](https://www.campkesem.org/), a week-long summer camp for kids whose parents have been affected by cancer.
 
-![Teaching demo](/static/uploads/blogs/camp-kesem-2025/kesem-group.jpeg)
+![Whole Camp](kesem-all.jpeg)
 
 
 <h2 style="text-align:center;">Highlights from the Week</h2>
@@ -24,4 +24,12 @@ There were a few moments that really made the week special:
 
 - **Camp Conversations**: Whether it was arguing over someone's crazy basketball GOAT takes or convincing 14-year old campers to take showers, these little moments brought camper sand counselors close together.
 - **Color Olympics**: A longer event with a mix of fun games, colorful chants, and a LOT of yelling (see below).
-- **Affirmations and Empowerment**: More vulnerable moments where campers and counselors are able to show who they are.
+- **Affirmations and Empowerment**: More vulnerable moments where campers and counselors are able to show who they are and how they appreciate eachother.
+
+
+{{ carousel([
+  {'src': '/static/uploads/blogs/camp-kesem-2025/kesem-group.jpeg', 'alt': 'My Kesem Camp Group', 'caption': 'My Kesem Camp Group'},
+  {'src': '/static/uploads/blogs/camp-kesem-2025/kesem-rock-climb.jpeg', 'alt': 'Scaling a climbing wall', 'caption': 'Scaling a climbing wall'},
+  {'src': '/static/uploads/blogs/camp-kesem-2025/kesem-chant.jpeg', 'alt': 'Leading a Purple Team Chant', 'caption': 'Leading a Purple Team Chant'},
+  {'src': '/static/uploads/blogs/camp-kesem-2025/kesem-affirmation.jpeg', 'alt': 'Post Affirmation Hug', 'caption': 'Post Affirmation Hug'}
+]) }}

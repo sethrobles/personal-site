@@ -30,7 +30,7 @@ After numerous conversations with our client, we finally settled on our library 
     - Hand-soldered connections for power, ground, and signals across the tracker board.
 
 
-<p align="center">
+<p align="center",padding=20px>
   <img src="tracker_on_display.jpeg" alt="tracker on display">
   <br>
   <span style="font-size:0.95em; color: #666; font-style:italic;">Tracker on display at final presentation</span>
