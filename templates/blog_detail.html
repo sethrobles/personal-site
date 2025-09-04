@@ -20,6 +20,11 @@
             <p class="blog-post-summary">{{ post.summary }}</p>
             {% endif %}
         </header>
+        {% if post.metadata.date %}
+        <div class="blog-post-date">
+            {{ post.metadata.date|strftime('%B %d, %Y') if post.metadata.date else post.metadata.date }}
+        </div>
+        {% endif %}
 
         {% if post.hero_image %}
         <div class="blog-post-hero">

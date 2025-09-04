@@ -413,10 +413,6 @@ a:hover {
     gap: 2rem;
 }
 
-    box-shadow: var(--shadow-lg);
-    border-color: var(--border-hover);
-}
-
 .card-image {
     height: 200px;
     overflow: hidden;
