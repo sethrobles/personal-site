@@ -27,6 +27,12 @@ def fix_image_paths(md_content, slug, content_type):
         rf'<img\1src="/static/uploads/{folder}/{slug}/\2"\3>',
         md_content
     )
+    # For <source src="filename"> in <video> tags
+    md_content = re.sub(
+        r'<source([^>]*?)src=["\"]([^"/][^"\"]+)["\"]([^>]*)>',
+        rf'<source\1src="/static/uploads/{folder}/{slug}/\2"\3>',
+        md_content
+    )
     # For markdown images ![alt](filename)
     md_content = re.sub(
         r'!\[([^\]]*)\]\((?!http)([^)]+)\)',

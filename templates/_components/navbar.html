@@ -1,23 +1,5 @@
 <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navbar-container">
-        <div class="navbar-brand">
-            <a href="/index.html" class="navbar-logo">
-                Seth Robles
-            </a>
-        </div>
-
-        <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-            <span class="navbar-toggle-icon"></span>
-        </button>
-
-        <div class="navbar-menu">
-            <a href="/index.html" class="navbar-link">Home</a>
-            <a href="/projects_index.html" class="navbar-link">Projects</a>
-            <a href="/blog_index.html" class="navbar-link">Blog</a>
-            <a href="/resume.html" class="navbar-link">Resume</a>
-            <a href="/portfolio.html" class="navbar-link">Portfolio</a>
-        </div>
-
         {% if show_theme_toggle %}
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
             <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -36,6 +18,21 @@
             </svg>
         </button>
         {% endif %}
+        <div class="navbar-brand">
+            <a href="/index.html" class="navbar-logo">
+                Seth Robles
+            </a>
+        </div>
+        <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="navbar-toggle-icon"></span>
+        </button>
+        <div class="navbar-menu">
+            <a href="/index.html" class="navbar-link">Home</a>
+            <a href="/projects_index.html" class="navbar-link">Projects</a>
+            <a href="/blog_index.html" class="navbar-link">Blog</a>
+            <a href="/resume.html" class="navbar-link">Resume</a>
+            <a href="/portfolio.html" class="navbar-link">Portfolio</a>
+        </div>
     </div>
 </nav>
 
