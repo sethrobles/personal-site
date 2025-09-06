@@ -11,13 +11,12 @@ show_toc: false
 hidden: false
 ---
 
-# Teaching Physics at MITES
-
 This summer I had the chance to serve as a residential **Physics TA for MITES**, MIT’s program for rising high school seniors from underrepresented backgrounds. The program lasted 6 weeks and presented an opportunity to grow as a teacher and mentor.
 
 My coworker, Jan, and I led a group of 13 students for the summer as residential advisors, acting as mentors outside of our teaching duties. Together, we planned Boston outings, gropu activities, and organized check-ins with students throughout the summer.
 
-## What Stood Out
+<h2 style="text-align:center;">What Stood Out</h2>
+
 
 There were a few moments that made the experience unforgettable:
 
@@ -25,7 +24,8 @@ There were a few moments that made the experience unforgettable:
 - **Teaching Clicks**: Watching a student go from “this equation is nonsense” to “oh yeah, that's parabolic motion"
 - **Peer Connection**: A lot of my role was being the bridge between professor and student—someone approachable who could say, “yeah, I also thought that was confusing at first.”
 
-## What I Learned
+<h2 style="text-align:center;">What I Learned</h2>
+
 
 Being a TA wasn’t just about explaining physics—it was about learning how to **listen, adapt, and encourage**. Some students needed step-by-step breakdowns; others just wanted a nudge in the right direction. I came away with a deeper respect for good teaching and how much of it is about meeting people where they are.
 

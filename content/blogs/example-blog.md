@@ -1,10 +1,10 @@
 ---
 type: "blog"
-title: "A Week of Learning Flask"
-slug: "week-of-flask"
+title: "Example Blog"
+slug: "example-blog"
 date: "2024-02-10"
-tags: ["Python", "Flask", "Web Development", "Learning"]
-thumbnail: "flask-week-thumb.jpg"
+tags: ["Example Tag"]
+thumbnail: "example-blog-thumb.jpg"
 hero: "flask-week-hero.jpg"
 summary: "Reflections on my first week diving deep into Flask, building small apps, and realizing the joys (and quirks) of web development with Python."
 github_url: "https://github.com/sethrobles/flask-week"
@@ -14,6 +14,7 @@ hidden: true
 ---
 
 
+<h2 style="text-align:center;">What I Learned</h2>
 
 
 Links

@@ -3,7 +3,7 @@ type: "blog"
 title: "GTL Italy"
 slug: "gtl-italy"
 date: "2025-01-31"
-tags: ["GTL", "Italy", "Foreign Languages", "Teaching"]
+tags: ["GTL", "Travel", "Foreign Languages", "Teaching"]
 thumbnail: "gtl-italy-thumb.jpeg"
 hero: "gtl-italy-thumb.jpeg"
 summary: "A month spent in Italy, teaching high school students about physics, electronics, web development, and machine learning."

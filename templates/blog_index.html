@@ -33,7 +33,7 @@
                     {% endif %}
                 {% endfor %}
 
-                {% for tag in all_tags[:10] %}
+                {% for tag in all_tags[50] %}
                 <button class="tag-filter" data-tag="{{ tag }}">{{ tag }}</button>
                 {% endfor %}
             </div>

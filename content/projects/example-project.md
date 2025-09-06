@@ -13,9 +13,9 @@ show_toc: false
 hidden: true
 ---
 
-This is an red LED array (32x32) design in KiCAD and will eventually ordered from JLCPCB. It is a 4-layer PCB board is using a STM32 controller, 16 shift regiseters. This is current in progress.
+<h2 style="text-align:center;">What I Learned</h2>
 
-Thank you to my friend Miguel for providing a lot of guidance on this project.
+
 ## Features
 
 - **Markdown Rendering**:

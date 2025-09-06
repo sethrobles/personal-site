@@ -12,45 +12,41 @@ show_toc: false
 hidden: false
 ---
 
-# ML Maker
 
-ML Maker is a no-code machine learning toolkit designed to help users quickly analyze data, train models, and visualize results—all from a simple web interface. Built for educators, students, and rapid prototypers, ML Maker streamlines the process of working with machine learning without requiring programming expertise.
 
-## Features
+
+ML Maker is a no-code machine learning toolkit built as an **Electron desktop application**. It’s designed to help users quickly analyze data, train models, and visualize results—all from a simple interface. Aimed at educators, students, and rapid prototypers, ML Maker streamlines the process of working with machine learning without requiring programming expertise. **The project is under active development.**
+
+This project was built in collaboration with my friend **Jack**, whose contributions have been essential in shaping the design and development of ML Maker
+
+<h2 style="text-align:center;">Key Features</h2>
 
 - **Data Analysis**
-  - Upload CSV datasets and explore statistics, distributions, and correlations interactively.
-  - Visualize data with built-in charting tools.
+
+    - Upload CSV datasets and explore statistics, distributions, and correlations interactively.
+    - Visualize data with built-in charting tools.
 
 - **Model Training**
-  - Train regression and classification models using scikit-learn and PyTorch backends.
-  - Advanced tuning options for hyperparameters and feature selection.
+
+    - Train regression and classification models using scikit-learn and PyTorch backends.
+    - Advanced hyperparameter tuning and feature selection options.
 
 - **Model Deployment**
-  - Save, load, and use trained models for predictions directly in the app.
-  - Export models and metadata for use in other projects.
+
+    - Save, load, and use trained models for predictions directly in the app.
+    - Export models and metadata for integration into other projects.
 
 - **User Interface**
-  - Intuitive web-based UI built with HTML, CSS, and JavaScript.
-  - Modular panels for data analysis, training, and visualization.
 
-## Code Example
+    - Cross-platform desktop app powered by Electron.
+    - Modular, intuitive panels for data analysis, training, and visualization.
 
-A simplified Python snippet for training a regression model with scikit-learn:
+<div style="height:1.5em"></div>
 
-```python
-import pandas as pd
-from sklearn.linear_model import LinearRegression
+In the future, I hope that ML Maker encourages those with less technical expertise to familarize themselves with machine learning and its real-world applications.
 
-# Load dataset
-data = pd.read_csv('data.csv')
-X = data.drop('target', axis=1)
-y = data['target']
-
-# Train model
-model = LinearRegression()
-model.fit(X, y)
-
-# Make predictions
-predictions = model.predict(X)
-```
+{{ carousel([
+  {'src': '/static/uploads/projects/ml-maker/landing_page.png', 'alt': 'Landing Page', 'caption': 'Landing Page'},
+  {'src': '/static/uploads/projects/ml-maker/features_page.png', 'alt': 'Features Selection', 'caption': 'Features Selection'},
+  {'src': '/static/uploads/projects/ml-maker/model_configuration.png', 'alt': 'Model Configuration', 'caption': 'Model Configuration'},
+]) }}
