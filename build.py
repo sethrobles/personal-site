@@ -8,9 +8,24 @@ from staticjinja import Site
 
 # Load socials
 SOCIALS_PATH = "private/socials.json"
+INFO_PATH = "private/info.json"
+PERSONAL_INFO_PATH = "private/personal_info.json"
+
 def load_socials():
     if os.path.exists(SOCIALS_PATH):
         with open(SOCIALS_PATH) as f:
+            return json.load(f)
+    return {}
+
+def load_info():
+    if os.path.exists(INFO_PATH):
+        with open(INFO_PATH) as f:
+            return json.load(f)
+    return {}
+
+def load_personal_info():
+    if os.path.exists(PERSONAL_INFO_PATH):
+        with open(PERSONAL_INFO_PATH) as f:
             return json.load(f)
     return {}
 
@@ -103,20 +118,24 @@ def home_context(template):
     featured_projects = projects[:3]
     featured_blogs = blogs[:3]
     featured_work = sorted(featured_projects + featured_blogs, key=lambda x: x['metadata'].get('date', ''), reverse=True)
-    return {'featured_work': featured_work, 'socials': socials}
+    return {'featured_work': featured_work, 'socials': socials, 'personal_info': personal_info}
 
 def projects_index_context(template):
-    return {'projects': projects, 'socials': socials}
+    return {'projects': projects, 'socials': socials, 'personal_info': personal_info}
 
 def blog_index_context(template):
-    return {'posts': blogs, 'socials': socials}
+    return {'posts': blogs, 'socials': socials, 'personal_info': personal_info}
 
 def entry_detail_context(template):
     # This will be set per-render below
-    return {}
+    return {'personal_info': personal_info}
 
 
 
+
+
+# Load personal_info at the top-level so it's available to all contexts
+personal_info = load_personal_info()
 
 site = Site.make_site(
     searchpath='templates',
@@ -125,7 +144,7 @@ site = Site.make_site(
         ('home.html', home_context),
         ('projects_index.html', projects_index_context),
         ('blog_index.html', blog_index_context),
-        ('.*', lambda template: {'socials': socials})
+        ('.*', lambda template: {'socials': socials, 'personal_info': personal_info})
     ]
 )
 
@@ -142,7 +161,7 @@ site.get_template('blog_index.html').stream(blog_index_context(None)).dump(os.pa
 # Render detail pages for projects and blogs
 def render_detail_pages(site, items, template_name, outdir):
     for item in items:
-        context = {'entry': item, 'socials': socials}
+        context = {'entry': item, 'socials': socials, 'personal_info': personal_info}
         outpath = os.path.join(site.outpath, outdir, f"{item['slug']}.html")
         os.makedirs(os.path.dirname(outpath), exist_ok=True)
         site.get_template(template_name).stream(context).dump(outpath)
@@ -151,10 +170,11 @@ render_detail_pages(site, projects, 'entry_detail.html', 'projects')
 render_detail_pages(site, blogs, 'entry_detail.html', 'blogs')
 
 # Render static pages
-site.get_template('resume.html').stream({'socials': socials}).dump(os.path.join(site.outpath, 'resume.html'))
-site.get_template('portfolio.html').stream({'socials': socials}).dump(os.path.join(site.outpath, 'portfolio.html'))
-site.get_template('404.html').stream({'socials': socials}).dump(os.path.join(site.outpath, '404.html'))
-site.get_template('500.html').stream({'socials': socials}).dump(os.path.join(site.outpath, '500.html'))
+static_context = {'socials': socials, 'personal_info': personal_info}
+site.get_template('resume.html').stream(static_context).dump(os.path.join(site.outpath, 'resume.html'))
+site.get_template('portfolio.html').stream(static_context).dump(os.path.join(site.outpath, 'portfolio.html'))
+site.get_template('404.html').stream(static_context).dump(os.path.join(site.outpath, '404.html'))
+site.get_template('500.html').stream(static_context).dump(os.path.join(site.outpath, '500.html'))
 
 
 

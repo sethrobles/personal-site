@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{% block description %}Seth Robles - Mechanical Engineer and Roboticist{% endblock %}">
+    <meta name="description" content="{% block description %}Seth Robles - {{ personal_info.title }}{% endblock %}">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ socials.twitter }}">
     <meta property="og:title" content="{% block og_title %}Seth Robles - Portfolio{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}Seth Robles - Mechanical Engineer and Roboticist{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Seth Robles - {{ personal_info.title }}{% endblock %}">
     <meta property="og:image" content="{% block og_image %}/static/uploads/og-image.jpg{% endblock %}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ socials.twitter }}">
     <meta property="twitter:title" content="{% block twitter_title %}Seth Robles - Portfolio{% endblock %}">
-    <meta property="twitter:description" content="{% block twitter_description %}Seth Robles - Mechanical Engineer and Roboticist{% endblock %}">
+    <meta property="twitter:description" content="{% block twitter_description %}Seth Robles - {{ personal_info.title }}{% endblock %}">
     <meta property="twitter:image" content="{% block twitter_image %}/static/uploads/og-image.jpg{% endblock %}">
 
-    <title>{% block title %}Seth Robles - Mechanical Engineer and Roboticist{% endblock %}</title>
+    <title>{% block title %}Seth Robles - {{ personal_info.title }}{% endblock %}</title>
 
     <!-- Favicons for all devices and browsers -->
     <link rel="icon" type="image/x-icon" href="/static/uploads/personal/favicon_io/favicon.ico">
