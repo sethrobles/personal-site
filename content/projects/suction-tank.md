@@ -3,7 +3,7 @@ type: "project"
 title: "Suction Tank Robot"
 slug: "suction-tank"
 date: "2025-08-21"
-tags: ["Prototyping", "3D Printing", "Arduino"]
+tags: ["Prototyping", "3D Printing", "Arduino", "Robotics"]
 thumbnail: "suction-tank-thumb.jpg"
 # hero: "suction-tank-hero.jpg"
 summary: "A prototyped tank-style robot that uses suction to adhere to surfaces, designed with 3D printed parts and modular components."

@@ -13,6 +13,14 @@ show_toc: false
 hidden: true
 ---
 
+div style="display: flex; justify-content: center; align-items: center;">
+  <video controls style="max-width:100%;height:auto;">
+    <source src="ur5-demo.mov" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+
 
 <h2 style="text-align:center;">What I Learned</h2>
 
@@ -47,9 +55,10 @@ posts = [
     {"title": "Second Post", "content": "Now it feels like a blog."}
 ]
 
-@app.route('/')
-def home():
-    return render_template('home.html', posts=posts)
+posts = [
+    {"title": "First Post", "content": "This is where it all began."},
+    {"title": "Second Post", "content": "Now it feels like a blog."}
+]
 
 
 {{ carousel([
