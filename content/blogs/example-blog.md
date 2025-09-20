@@ -13,8 +13,8 @@ show_toc: false
 hidden: true
 ---
 
-div style="display: flex; justify-content: center; align-items: center;">
-  <video controls style="max-width:100%;height:auto;">
+<div style="display: flex; justify-content: center; align-items: center;">
+  <video controls style="max-width:100%;height:auto;padding:20px;">
     <source src="ur5-demo.mov" type="video/mp4">
     Your browser does not support the video tag.
   </video>

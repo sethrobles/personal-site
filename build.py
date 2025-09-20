@@ -154,9 +154,12 @@ print(f"site.outpath type: {type(site.outpath)}, value: {site.outpath}")
 
 
 # Render index pages using Jinja2's stream().dump() to avoid staticjinja rule errors
+os.makedirs(os.path.join(site.outpath, ''), exist_ok=True)
 site.get_template('home.html').stream(home_context(None)).dump(os.path.join(site.outpath, 'index.html'))
-site.get_template('projects_index.html').stream(projects_index_context(None)).dump(os.path.join(site.outpath, 'projects_index.html'))
-site.get_template('blog_index.html').stream(blog_index_context(None)).dump(os.path.join(site.outpath, 'blog_index.html'))
+os.makedirs(os.path.join(site.outpath, 'projects'), exist_ok=True)
+site.get_template('projects_index.html').stream(projects_index_context(None)).dump(os.path.join(site.outpath, 'projects', 'index.html'))
+os.makedirs(os.path.join(site.outpath, 'blogs'), exist_ok=True)
+site.get_template('blog_index.html').stream(blog_index_context(None)).dump(os.path.join(site.outpath, 'blogs', 'index.html'))
 
 # Render detail pages for projects and blogs
 def render_detail_pages(site, items, template_name, outdir):
@@ -173,10 +176,14 @@ render_detail_pages(site, blogs, 'entry_detail.html', 'blogs')
 
 # Render static pages
 static_context = {'socials': socials, 'personal_info': personal_info}
-site.get_template('resume.html').stream(static_context).dump(os.path.join(site.outpath, 'resume.html'))
-site.get_template('portfolio.html').stream(static_context).dump(os.path.join(site.outpath, 'portfolio.html'))
-site.get_template('404.html').stream(static_context).dump(os.path.join(site.outpath, '404.html'))
-site.get_template('500.html').stream(static_context).dump(os.path.join(site.outpath, '500.html'))
+os.makedirs(os.path.join(site.outpath, 'resume'), exist_ok=True)
+site.get_template('resume.html').stream(static_context).dump(os.path.join(site.outpath, 'resume', 'index.html'))
+os.makedirs(os.path.join(site.outpath, 'portfolio'), exist_ok=True)
+site.get_template('portfolio.html').stream(static_context).dump(os.path.join(site.outpath, 'portfolio', 'index.html'))
+os.makedirs(os.path.join(site.outpath, '404'), exist_ok=True)
+site.get_template('404.html').stream(static_context).dump(os.path.join(site.outpath, '404', 'index.html'))
+os.makedirs(os.path.join(site.outpath, '500'), exist_ok=True)
+site.get_template('500.html').stream(static_context).dump(os.path.join(site.outpath, '500', 'index.html'))
 
 
 
