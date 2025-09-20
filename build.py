@@ -162,8 +162,10 @@ site.get_template('blog_index.html').stream(blog_index_context(None)).dump(os.pa
 def render_detail_pages(site, items, template_name, outdir):
     for item in items:
         context = {'entry': item, 'socials': socials, 'personal_info': personal_info}
-        outpath = os.path.join(site.outpath, outdir, f"{item['slug']}.html")
-        os.makedirs(os.path.dirname(outpath), exist_ok=True)
+        # Pretty URL: output/blogs/slug/index.html or output/projects/slug/index.html
+        outdir_path = os.path.join(site.outpath, outdir, item['slug'])
+        os.makedirs(outdir_path, exist_ok=True)
+        outpath = os.path.join(outdir_path, 'index.html')
         site.get_template(template_name).stream(context).dump(outpath)
 
 render_detail_pages(site, projects, 'entry_detail.html', 'projects')
